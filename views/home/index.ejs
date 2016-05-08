@@ -1,0 +1,24 @@
+<div id="racesData" class="hidden">
+  <%- JSON.stringify(races) %> 
+</div>
+<div id="firstPanel" class="container-fluid">
+  <div id="map" class="row">
+    <%- partial('../map.ejs') %>
+  </div>
+  
+  <div id="title" class="row text-center">
+    <h3>Hey racer ! Here are some races you can rush at.</h3>
+    <a class="btn btn-primary btn-lg" href="#browse">
+  <i class="fa fa-arrow-down fa-lg" aria-hidden="true"></i> Interesting. Tell me more</a>
+  </div>
+</div>
+<div name="browse" id="browse" class="container-fluid">
+  <div id="browseRace" class="row">
+  </div>
+  
+  <div id="title" class="row text-center">
+    <h3>Didn't find anything nice to run after?</h3>
+    <a class="btn btn-danger btn-lg" href="race/new">
+  <i class="fa fa-flag fa-lg" aria-hidden="true"></i> Create your own race now</a>
+  </div>
+</div>

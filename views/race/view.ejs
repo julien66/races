@@ -1,0 +1,39 @@
+<div id="raceData" class="hidden">
+  <%- JSON.stringify(race) %> 
+</div>
+<div name="firstPanel" id="firstPanel" class="container-fluid">
+  <div id="map" class="row">
+    <%- partial('../map.ejs') %>
+  </div>
+  <div id="title" class="row text-center">
+    <h3> What an epic Race!</h3>
+    <a href="#results" class="btn btn-lg btn-primary">
+      <i class="fa fa-arrow-down fa-lg" aria-hidden="true"></i> Discover now who's winning!
+    </a>
+  </div>
+</div>
+<div name="results" id="results" class="container-fluid">
+  <div id="raceResults" class="row text-center">
+  </div>
+  <div id="title" class="row text-center">
+    <% if (req.user) { %>
+      <h3>"Let me try. Upload my tracklog!"</h3>
+      <form id="trackForm" action="/track/upload" enctype="multipart/form-data" method="post">
+        <span class="btn btn-lg btn-primary btn-file">
+          <input id="raceId" type="hidden" name="raceId" value="<%= race.id %>">
+          <i class="fa fa-upload fa-lg" aria-hidden="true"></i>  Browse for IGC file
+          <input id="sendTrack" type="file" name="track" accept=".igc, .IGC">
+        </span>
+        <span id="progress" class="hidden btn btn-lg btn-warn">
+          <i class="fa fa-refresh fa-spin fa-lg fa-fw" aria-hidden="true"></i>
+          <span id="percent"></span> %
+        </span>
+      </form>
+    <% } else { %>
+      <h3>"I want to race too!"</h3>
+      <a href="/login?ref=<%- req.path %>" class="btn btn-lg btn-primary">
+        <i class="fa fa-key fa-lg" aria-hidden="true"></i>  Log me In
+      </a>
+    <% } %>
+  </div>
+</div>

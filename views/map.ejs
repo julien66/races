@@ -1,0 +1,23 @@
+<% block('css', '<link rel="stylesheet" type="text/css" href="/js/task-creator/css/style.css">') -%>
+<% block('css', '<link rel="stylesheet" type="text/css" href="/js/task-creator/js/lib/jGrowl/jquery.jgrowl.css">') -%>
+<% block('css', '<link rel="stylesheet" type="text/css" href="/js/task-creator/js/lib/jquery-ui-1.11.0.custom/jquery-ui.css">') -%>
+<% block('css','<link rel="stylesheet" type="text/css" href="/js/task-creator/js/lib/jquery-ui-1.11.0.custom/jquery-ui.structure.css">') -%>
+  <div id="map-canvas" class="col-sm-9"></div>
+  <div id="sidebar" class="col-sm-3 hidden">
+  <div id="sidebar-inner">
+    <form action="#" id="uploader"></form>
+      <div id="file-handler">
+        <ul>
+        </ul>
+        <button id="export-waypoints" class="btn btn-primary hide pull-right">Export Waypoints</button>
+      </div>
+      <div id ="taskboard">
+        <div id="taskboard-header">
+          Taskboard
+        </div>
+        <div id="taskboard-content">
+        </div>
+      </div>
+      <button id="full-board" class="btn btn-primary hide pull-right">Full Board</button>
+    </div>
+  </div> 
