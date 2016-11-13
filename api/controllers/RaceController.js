@@ -14,7 +14,7 @@ module.exports = {
   },
 
   view : function(req, res) {
-    Race.findOne({id : req.param('id')}).exec(function(err, results) {
+    Race.findOne({id : req.param('rid')}).exec(function(err, results) {
       if (err) {res.notFound();}
       res.view({race : results});
     });

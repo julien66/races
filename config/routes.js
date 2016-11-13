@@ -41,9 +41,19 @@ module.exports.routes = {
     action : 'index',
   },
 
-  '/race/view/:id' : {
+  '/race/view/:rid' : {
     controller : 'race',
     action : 'view',
+  },
+
+  '/track/check/:tid/:rid' : {
+    controller : 'track',
+    action : 'check',
+  },
+  
+  '/track/create/:fd' : {
+    controller : 'track',
+    action : 'create',
   }
 
   /***************************************************************************
